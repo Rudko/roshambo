@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Play View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="PlayViewController" id="BYZ-38-t0r" userLabel="Play View Controller" customClass="PlayViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUN-tt-6cm" userLabel="paperButton">
+                                <rect key="frame" x="150" y="300" width="75" height="65"/>
+                                <state key="normal" image="paper"/>
+                                <connections>
+                                    <action selector="throwPaper" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bj2-pw-rlr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's Play!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptt-r0-SYT">
+                                <rect key="frame" x="148" y="398" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irr-mX-4wm" userLabel="scissorsButton">
+                                <rect key="frame" x="240" y="300" width="75" height="65"/>
+                                <state key="normal" image="scissors"/>
+                                <connections>
+                                    <segue destination="wFx-Dh-zp6" kind="presentation" identifier="scissors" id="Pux-G7-nkq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="wFx-Dh-zp6" kind="presentation" identifier="paper" id="vQv-f2-SG9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="315" y="387"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="mfY-4C-yEp">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="wFx-Dh-zp6" userLabel="Results View Controller" customClass="ResultsViewController" customModule="Roshambo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z0r-we-kVb"/>
+                        <viewControllerLayoutGuide type="bottom" id="h1f-6k-tcg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jpe-6p-o2G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H44-mq-t2i" userLabel="Play Again Button">
+                                <rect key="frame" x="152" y="412" width="71" height="30"/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgainButton:" destination="wFx-Dh-zp6" eventType="touchUpInside" id="nNP-1H-Wm4"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="anV-bD-uuj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7QF-TW-qsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="387"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="paper" width="75" height="65"/>
+        <image name="scissors" width="75" height="65"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pux-G7-nkq"/>
+    </inferredMetricsTieBreakers>
+</document>
